@@ -4,7 +4,7 @@
     <p>This is a simple website designed to desplay recipes.</p>
   </div>
   <ul>
-    <li *ngFor="let currentRecipe of recipes">{{currentRecipe.title}} by {{currentRecipe.author}}<button (click)="displayDetails(currentRecipe)">Details</button></li>
+    <li *ngFor="let currentRecipe of recipes | async">{{currentRecipe.title}} by {{currentRecipe.author}}<button (click)="displayDetails(currentRecipe)">Details</button></li>
   </ul>
   <hr>
   <div>
