@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <h1>Recipe Box!</h1>
+    <p>This is a simple website designed to desplay recipes.</p>
+  </div>
+  <ul>
+    <li *ngFor="let currentRecipe of recipes">{{currentRecipe.title}} by {{currentRecipe.author}}<button (click)="displayDetails(currentRecipe)">Details</button></li>
+  </ul>
+  <hr>
+  <div>
+    <div *ngIf="selectedRecipe">
+      <h1>{{selectedRecipe.title}}</h1>
+      <h3>by {{selectedRecipe.author}}</h3>
+      <h2>Description:</h2>
+      <div class="well">
+        <h4>{{selectedRecipe.description}}</h4>
+      </div>
+      <h2>Ingredients:</h2>
+      <ul>
+        <li *ngFor="let ingredient of selectedRecipe.ingredients">{{ingredient}}</li>
+      </ul>
+      <h2>Directions:</h2>
+      <ul>
+        <li *ngFor="let instruction of selectedRecipe.instructions">{{instruction}}</li>
+      </ul>
+      <button (click)="hideDetails()">Hide</button>
+    </div>
+  </div>
+</div>
